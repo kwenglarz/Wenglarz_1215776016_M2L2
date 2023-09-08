@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/calculate" method="POST">
+        <input type="number" name="num1" placeholder="Enter first number" required>
+        <input type="number" name="num2" placeholder="Enter second number" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <p>
+        <h1>Calculation Results</h1>
+        <p>Numbers: [<%= [firstNum, secondNum] %>]</p>
+        <p>Sum: <%= sum %></p>
+        <p>Difference: <%= difference %></p>
+        <p>Product: <%= product %></p>
+        <p>Quotient: <%= quotient %></p>
+        <!-- Add a Greater Numebr section to show conditional rendering -->
+        <p>Greater number: 
+            <% if(firstNum > secondNum){ %>
+                <%= firstNum %>
+            <% } else{ %>  
+                <%= secondNum %>
+            <% } %>
+        </p>
+    </p>
+
+    <!-- Only show if allResults is greater than 1. If allResults is 1,
+    then the user has only input 1 result, and it will be showing in the
+    Calculation Results section above -->
+    <%if (allResults.length > 1) { %>
+        <h1>Previous Results:</h1>
+        <!-- Loop to (allResults.length - 1) so that current result is not displayed,
+        we dipslay the current result in the Calculation Results section, so no need
+        to display here -->
+        <% for (var i = 0; i < allResults.length - 1; i++) { %>
+            <!-- Display previous results below -->
+            <p>Numbers: [<%= allResults[i]%>] </p>
+            <p>Sum: <%= allResults[i][0] + allResults[i][1]%></p>
+            <p>Difference: <%= allResults[i][0] - allResults[i][1]%></p>
+            <p>Product: <%= allResults[i][0] * allResults[i][1]%></p>
+            <p>Quotient: <%= allResults[i][0] / allResults[i][1]%></p>
+            <p>Greater number: 
+                <% if(allResults[i][0] > allResults[i][1]){ %>
+                    <%= allResults[i][0] %>
+                <% } else{ %>  
+                    <%= allResults[i][1] %>
+                <% } %>
+            </p>
+        <% } %>
+    <% } %>
+</body>
+</html>

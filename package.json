@@ -1,0 +1,21 @@
+{
+  "name": "wenglarz_1215776016_m2a2",
+  "version": "1.0.0",
+  "description": "student code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Wenglarz_1215776016_M2A2"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
