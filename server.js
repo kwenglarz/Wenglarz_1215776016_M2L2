@@ -15,20 +15,26 @@ app.set('views', path.join(__dirname, 'views'));
 console.log('views', path.join(__dirname, 'views'));
 
 
-// *------- Default and Calculate Paths -------*
+// *------- Default Paths -------*
 
-// Create a route for the home page
-// The GET route for the form
+// Create a GET route for the home page - renders buttons that routes to all
+// paths related to the exercises
 app.get('/', (req, res) => {
     // Render the form and pass in the current student data
     res.render('index');
+});
+
+// *------- Calculate Paths -------*
+app.get('/calculate', (req, res) => {
+    // Render the form and pass in the current student data
+    res.render('calculate');
 });
 
 // Initialize array to store all results
 const allResults = [];
 
 // create a route for user to enter the numbers
-app.post('/calculate', (req, res) => {
+app.post('/calculate/addNumbers', (req, res) => {
     const { num1, num2 } = req.body;
     const sum = Number(num1) + Number(num2);
     const difference = Number(num1) - Number(num2);

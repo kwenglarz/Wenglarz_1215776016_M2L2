@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Created to demonstrate difference between html and ejs  -->
+<!-- Created sample ul element to show what it would look like if there were books added to the list -->
+<!-- This doesn't update with user input since there is no JavaScript attached to it. For it to update, it would need to utilize JavaScript or be hard-coded in.  -->
+<ul>
+    <li>MyBook by Kayana (Published: 1997)</li>
+    <li>MyBook2 by Kayana (Published: 2018)</li>
+    <li>MyBook3 by Kayana (Published: 2023)</li>
+</ul>
+<body>
+    <form action="/books2/addBook" method="post">
+        <input type="text" name="title" placeholder="title" required>
+        <input type="text" name="author" placeholder="Author" required>
+        <input type="text" name="publicationYear" placeholder="Publication Year" required>
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+</html>
